@@ -1,7 +1,7 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # Check if the request is coming to the subdomain check.me.kbjnepal.com
+    # Check if the request is coming to the subdomain check.me.kbjnepal.com/////
     RewriteCond %{HTTP_HOST} ^check.me\.kbjnepal\.com [NC]
     RewriteCond %{REQUEST_URI} !^/check.me/public/
     RewriteRule ^(.*)$ /check.me/public/$1 [L]
