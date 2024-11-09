@@ -1,9 +1,14 @@
 <IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Check if the request is coming to the subdomain check.kbjnepal.com
+    RewriteCond %{HTTP_HOST} ^check\.kbjnepal\.com [NC]
+    RewriteCond %{REQUEST_URI} !^/check/public/
+    RewriteRule ^(.*)$ /check/public/$1 [L]
+
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>
-
-    RewriteEngine On
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
